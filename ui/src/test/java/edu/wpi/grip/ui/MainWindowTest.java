@@ -10,7 +10,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 import org.testfx.matcher.base.NodeMatchers;
-import org.testfx.util.WaitForAsyncUtils;
 
 import static org.testfx.api.FxAssert.verifyThat;
 
@@ -42,8 +41,6 @@ public class MainWindowTest extends ApplicationTest {
     public void testShouldCreateNewOperationInPipelineView() {
         // Given:
         clickOn("#add-operation");
-
-        WaitForAsyncUtils.waitForFxEvents();
 
         // Then:
         verifyThat(".pipeline", NodeMatchers.hasChild(".add-step"));
